@@ -9,6 +9,8 @@ coloque nas sessões indicadas*/
     /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
    --cor-de-fundo: #F5F5F5;
    --cor-de-link: #000;
+   --cor-de-btn: #2A7AE4;
+   --cor-de-fondo: #EAF2FD;
 }
 
 body {
@@ -21,6 +23,8 @@ body {
 }
 ol, ul,li {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 a{
     text-decoration: none;
@@ -42,49 +46,253 @@ https://en.bem.info/methodology/quick-start/*/
 /*Sección Menu*/
 
 section.menu{
-    
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: var(--cor-de-fundo) ;
+    width: -webkit-fill-available;
+}
+
+.menu__header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.menu__title {
+    margin: 0px 5px;
+}
+
+section.menu nav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex: auto;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.menu__list__item {
+    flex: auto;
+    margin: 0 5px;
+}
+
+.menu__list__item:hover {
+    font-weight: bold;
+}
+
+.menu__list__item__contato {
+    display: none;
 }
 
 /*Sección Title*/
 
-section.title{
+section.title {
+    margin: 60px 10px;
+}
 
+section.title .title__div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title__profile {
+    border-radius: 50%;
+    margin: 10px;
+    width: 200px;
+    height: auto;
+    order: 2;
+}
+
+.title__network {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title__network__item {
+    margin: 0px 10px;
 }
 
 /*Sección About*/
 
 section.about{
+    padding: 60px 0px;
+    background-color: var(--cor-de-fondo);
+}
 
+.about__title {
+    font-size: 20pt;
+}
+
+/*Sección Skills*/
+
+section.skills {
+    padding: 60px 0px;
+    text-align: center;
+}
+
+.skills__title {
+    font-size: 20pt;
+}
+
+.skills__line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills__box {
+    flex: auto;
 }
 
 /*Sección Hobbies*/
 
 section.hobbies{
-    
+    padding: 60px 0px;
+    text-align: center;
+}
+
+.hobbies__title {
+    font-size: 20pt;
+}
+
+.hobbies__line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hobbies__box {
+    flex: auto;
 }
 
 /* Experiencia Académica*/
 
 section.academic{
+    padding: 60px 0px;
+    text-align: center;
+    background-color: var(--cor-de-fondo);
+}
 
+.academic__title {
+    font-size: 20pt;
+}
+
+.academic__courses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.academic__courses__box {
+    margin: 5px;
+    width: 20%;
+    height: auto;
 }
 
 /* experiencia*/
 
 section.experience{
+    padding: 60px 0px;
+    text-align: center;
+}
 
+.experience__section__title {
+    font-size: 20pt;
+}
+
+.experience__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience__img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.experience__info-container {
+    margin-left: 5px;
+    text-align: left;
+}
+
+.experiencia__botao--repo {
+    color: var(--cor-de-btn);
+    background-color: transparent;
+    border: 1px solid var(--cor-de-btn);
+    padding: 15px;
+}
+
+.experience__botao--demo {
+    color: white;
+    background-color: var(--cor-de-btn);
+    border: 0;
+    padding: 15px;
 }
 
 /*Contacto*/
 
 section.formcontato{
+    padding: 60px 0px;
+    text-align: center;
+    background-color: var(--cor-de-fondo)
+}
 
+.formcontato__contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formcontato__text {
+    text-align: left;
+    margin: 10px;
+}
+
+.formcontato__title {
+    font-size: 20pt;
+}
+
+.formcontato__subtext {
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.formcontato__input, .formcontato__textarea {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    margin: 5px 0px;
+    padding: 5px;
+    border: 0px;
+}
+
+.formcontato__textarea {
+    height: 100px;
+}
+
+.formcontato__botao {
+    color: white;
+    background-color: var(--cor-de-btn);
+    border: 0;
+    padding: 15px;
 }
 
 /*footeer*/
 
 section.footer{
-   
+   text-align: center;
 }
 
 /* Vamos a desafiarnos trabajando con responsividad?
@@ -92,28 +300,110 @@ Utiliza las referencias de los breakpoints @media abajo */
 
 
 /*Tablet*/
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
 /* Menú */
+
+.menu__list {
+    display: none;
+}
+
+.menu__list__item__contato {
+    display: flex;
+}
 
 /*title*/
 
 /*Skills*/
 
+.skills__line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.skills__box {
+    flex-basis: 40%;
+    margin: 10px;
+}
+
 /*Hobbies*/
+
+.hobbies__line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.hobbies__box {
+    flex-basis: 40%;
+    margin: 10px;
+}
 
 /*Formación Académica*/
 
+.academic__courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.academic__courses__box {
+    flex-basis: 40%;
+    margin: 10px;
+}
+
 /*Experiencia Profesional*/
 
+.experience__box {
+    display: block;
+}
+
+.experience__info-container {
+    margin: 0px 20px;
+}
+
+/*Contacto*/
+.formcontato--esquerda {
+    display: none;
+}
+
+.formcontato__input, .formcontato__textarea {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    margin: 5px 0px;
+    padding: 5px 0px;
+    border: 0px;
+}
+
+.formcontato__textarea {
+    height: 100px;
+}
 }
 
 /*Mobile*/
-@media (min-width: 425px) {
+@media (max-width: 425px) {
 
 /*Menu*/
 
 /*Titulo*/
+
+section.title {
+    margin: 60px 10px;
+}
+
+section.title .title__div {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
 
 /*Sección sobre mi*/
 
@@ -125,7 +415,7 @@ Utiliza las referencias de los breakpoints @media abajo */
 
 /*Experiencia Profesional*/
 
- /*Contacto*/
+/*Contacto*/
 
 /*Footer*/
 
